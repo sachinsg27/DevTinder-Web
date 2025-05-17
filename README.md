@@ -10,3 +10,14 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Steps
+
+# Ep-03
+
+## NOTE - When we use <strictMode> of react then API calls will be made twice
+
+- When page gets refresh user should not logged out bcoz we'll still have token even if page refreshed.
+- in Body => get profile of of loggedinUser via .get(profile/view) APi
+- update the store using useDispatch()
+- load the user details as soon as component loads i.e. using useEffect()
