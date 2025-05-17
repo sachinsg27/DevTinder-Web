@@ -21,3 +21,6 @@ If you are developing a production application, we recommend using TypeScript wi
 - in Body => get profile of of loggedinUser via .get(profile/view) APi
 - update the store using useDispatch()
 - load the user details as soon as component loads i.e. using useEffect()
+- If user is not loggedIn or Token gets expire then navigate to login page (using useNavigate())
+
+- If we change urls for calling APIs then it will make an API call instead add <Link> tag to specific part (e.g profile button will lead you to profile page)
