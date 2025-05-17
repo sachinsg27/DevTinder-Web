@@ -24,3 +24,7 @@ If you are developing a production application, we recommend using TypeScript wi
 - If user is not loggedIn or Token gets expire then navigate to login page (using useNavigate())
 
 - If we change urls for calling APIs then it will make an API call instead add <Link> tag to specific part (e.g profile button will lead you to profile page)
+
+- Logout function => create onclick button handler, call /logout API using axious, dispatch action removeUser for clearing redux store, navigate to "/login"
+
+- Add better error handling to login component
