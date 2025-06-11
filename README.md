@@ -18,7 +18,7 @@ If you are developing a production application, we recommend using TypeScript wi
 ## NOTE - When we use <strictMode> of react then API calls will be made twice
 
 - When page gets refresh user should not logged out bcoz we'll still have token even if page refreshed.
-- in Body => get profile of of loggedinUser via .get(profile/view) APi
+- in Body => get profile of loggedinUser via .get(profile/view) APi
 - update the store using useDispatch()
 - load the user details as soon as component loads i.e. using useEffect()
 - If user is not loggedIn or Token gets expire then navigate to login page (using useNavigate())
@@ -28,3 +28,5 @@ If you are developing a production application, we recommend using TypeScript wi
 - Logout function => create onclick button handler, call /logout API using axious, dispatch action removeUser for clearing redux store, navigate to "/login"
 
 - Add better error handling to login component
+
+- create feed.jsx which will call feed API => store data in redux store - create feedslice for that & add to appstore.js
