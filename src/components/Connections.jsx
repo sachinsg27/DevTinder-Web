@@ -17,8 +17,7 @@ const Connections = () => {
       dispatch(addConnections(res.data.data));
       setError(null); // clear previous error
     } catch (err) {
-      console.error("Error fetching connections:", err);
-      setError("Failed to load connections. Please try again.");
+      setError(err);
     }
   };
 

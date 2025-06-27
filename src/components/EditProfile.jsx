@@ -51,7 +51,7 @@ const EditProfile = ({ user }) => {
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900 min-h-screen py-10 px-4">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-6 items-start">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-6 items-stretch">
         {/* Edit Form */}
         <div className="w-full md:max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 space-y-5">
           <h1 className="text-xl font-bold text-center text-gray-900 dark:text-white">
