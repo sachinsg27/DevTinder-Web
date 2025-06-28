@@ -2,12 +2,25 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../utils/constant";
 import { useDispatch, useSelector } from "react-redux";
-import { addRequests } from "../utils/requestSlice";
+import { addRequests, removeRequest } from "../utils/requestSlice";
 
 const Requests = () => {
   const dispatch = useDispatch();
   const requests = useSelector((store) => store.Requests);
   const [error, setError] = useState(null);
+
+  const reviewRequest = async (status, _id) => {
+    try {
+      const res = await axios.post(
+        BASE_URL + "/request/review/" + status + "/" + _id,
+        {},
+        { withCredentials: true }
+      );
+      dispatch(removeRequest(_id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const fetchRequests = async () => {
     try {
@@ -78,10 +91,16 @@ const Requests = () => {
                 <p className="text-sm text-gray-400">{about}</p>
 
                 <div className="flex gap-4 mt-4 justify-center sm:justify-start">
-                  <button className="btn bg-green-600 hover:bg-green-700 text-white btn-sm sm:btn-md">
+                  <button
+                    className="btn bg-green-600 hover:bg-green-700 text-white btn-sm sm:btn-md"
+                    onClick={() => reviewRequest("accepted", request._id)}
+                  >
                     Accept
                   </button>
-                  <button className="btn bg-red-600 hover:bg-red-700 text-white btn-sm sm:btn-md">
+                  <button
+                    className="btn bg-red-600 hover:bg-red-700 text-white btn-sm sm:btn-md"
+                    onClick={() => reviewRequest("rejected", request._id)}
+                  >
                     Reject
                   </button>
                 </div>
